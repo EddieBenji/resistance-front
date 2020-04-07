@@ -6,7 +6,9 @@
                     <button mat-raised-button>Join game</button>
                 </mat-grid-tile>
                 <mat-grid-tile>
-                    <button mat-raised-button color="primary">Create game</button>
+                    <button mat-raised-button color="primary"
+                            (click)="onCreateGame()">Create game
+                    </button>
                 </mat-grid-tile>
             </mat-grid-list>
         </div>

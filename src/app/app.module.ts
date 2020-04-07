@@ -1,21 +1,28 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { AppRoutingModule } from './app-routing.module';
-import { AngularMaterialModule } from './shared/modules/angular-material.module';
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { HomeComponent } from './home/home.component';
 import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
+import { metaReducers, reducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './reducers/app.effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
-import { EntityDataModule } from '@ngrx/data';
-import { entityConfig } from './reducers/entity/entity-metadata';
+import { DefaultDataServiceConfig, EntityDataModule } from '@ngrx/data';
+import { HttpClientModule } from '@angular/common/http';
+
+// Customs:
+import { AngularMaterialModule } from './shared/modules/angular-material.module';
+import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
+import { entityConfig } from './shared/entities/entity-metadata';
+
+const defaultDataServiceConfig: DefaultDataServiceConfig = {
+    root: 'https://oscar-domain.com:8000/api/v1',
+    timeout: 3000, // request timeout
+};
 
 @NgModule({
     declarations: [
@@ -25,6 +32,7 @@ import { entityConfig } from './reducers/entity/entity-metadata';
     ],
     imports: [
         BrowserModule,
+        HttpClientModule,
         AppRoutingModule,
         BrowserAnimationsModule,
         AngularMaterialModule,
@@ -36,7 +44,7 @@ import { entityConfig } from './reducers/entity/entity-metadata';
         StoreRouterConnectingModule.forRoot(),
         EntityDataModule.forRoot(entityConfig)
     ],
-    providers: [],
+    providers: [ { provide: DefaultDataServiceConfig, useValue: defaultDataServiceConfig } ],
     bootstrap: [ AppComponent ]
 })
 export class AppModule {
