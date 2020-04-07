@@ -14,6 +14,8 @@ import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './reducers/app.effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { EntityDataModule } from '@ngrx/data';
+import { entityConfig } from './reducers/entity/entity-metadata';
 
 @NgModule({
     declarations: [
@@ -31,7 +33,8 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
         }),
         StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
         EffectsModule.forRoot([ AppEffects ]),
-        StoreRouterConnectingModule.forRoot()
+        StoreRouterConnectingModule.forRoot(),
+        EntityDataModule.forRoot(entityConfig)
     ],
     providers: [],
     bootstrap: [ AppComponent ]
