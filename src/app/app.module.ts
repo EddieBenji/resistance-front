@@ -11,6 +11,9 @@ import { AppEffects } from './reducers/app.effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { DefaultDataServiceConfig, EntityDataModule } from '@ngrx/data';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormlyModule } from '@ngx-formly/core';
+import { FormlyMaterialModule } from '@ngx-formly/material';
 
 // Customs:
 import { AngularMaterialModule } from './shared/modules/angular-material.module';
@@ -42,7 +45,10 @@ const defaultDataServiceConfig: DefaultDataServiceConfig = {
         StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
         EffectsModule.forRoot([ AppEffects ]),
         StoreRouterConnectingModule.forRoot(),
-        EntityDataModule.forRoot(entityConfig)
+        EntityDataModule.forRoot(entityConfig),
+        ReactiveFormsModule,
+        FormlyModule.forRoot(),
+        FormlyMaterialModule
     ],
     providers: [ { provide: DefaultDataServiceConfig, useValue: defaultDataServiceConfig } ],
     bootstrap: [ AppComponent ]
