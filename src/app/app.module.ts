@@ -21,6 +21,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { entityConfig } from './shared/entities/entity-metadata';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 const defaultDataServiceConfig: DefaultDataServiceConfig = {
     root: 'https://oscar-domain.com:8000/api/v1',
@@ -31,7 +33,9 @@ const defaultDataServiceConfig: DefaultDataServiceConfig = {
     declarations: [
         AppComponent,
         HeaderComponent,
-        HomeComponent
+        HomeComponent,
+        LoginComponent,
+        SignupComponent
     ],
     imports: [
         BrowserModule,

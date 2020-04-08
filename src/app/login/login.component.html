@@ -1,0 +1,23 @@
+<h1>Login to the resistance game</h1>
+<form [formGroup]="form"
+      (submit)="onSubmit()">
+    <formly-form [form]="form"
+                 [fields]="fields"
+                 [model]="model">
+    </formly-form>
+    <div class="buttons-container">
+        <button [disabled]="form.invalid"
+                mat-button
+                mat-raised-button
+                color="primary"
+                class="submit-button"
+                type="submit">
+            Log in
+        </button>
+    </div>
+    <strong>
+        <a routerLink="/signup"
+           mat-button
+           class="bottom-button">Create account</a>
+    </strong>
+</form>

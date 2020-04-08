@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatListModule } from '@angular/material/list';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
         MatButtonModule,
         MatTooltipModule,
         MatSnackBarModule,
-        MatGridListModule
+        MatGridListModule,
+        MatListModule
     ],
     exports: [
         MatIconModule,
@@ -25,7 +27,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
         MatButtonModule,
         MatTooltipModule,
         MatSnackBarModule,
-        MatGridListModule
+        MatGridListModule,
+        MatListModule
     ],
     providers: [
         {

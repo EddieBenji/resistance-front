@@ -1,9 +1,13 @@
 <mat-toolbar color="primary">
-  <span>
     <a mat-button
        matTooltip="Home"
-       routerLink="/">
+       routerLink="/home">
         <mat-icon aria-hidden="false" aria-label="Home">home</mat-icon>
     </a>
-  </span>
+    <span class="spacer"></span>
+    <a mat-button
+       matTooltip="Log out"
+       routerLink="/login">
+        <mat-icon aria-hidden="false" aria-label="Log out">exit_to_app</mat-icon>
+    </a>
 </mat-toolbar>
