@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
             return;
         }
         console.log(this.model);
-        this.router.navigateByUrl('/home');
+        this.router.navigateByUrl('/game');
     }
 
 }

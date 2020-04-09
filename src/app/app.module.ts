@@ -23,6 +23,9 @@ import { HomeComponent } from './home/home.component';
 import { entityConfig } from './shared/entities/entity-metadata';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { ChooseGameComponent } from './home/choose-game/choose-game.component';
+import { SpyPanelComponent } from './home/spy-panel/spy-panel.component';
+import { ResistancePanelComponent } from './home/resistance-panel/resistance-panel.component';
 
 const defaultDataServiceConfig: DefaultDataServiceConfig = {
     root: 'https://oscar-domain.com:8000/api/v1',
@@ -35,7 +38,10 @@ const defaultDataServiceConfig: DefaultDataServiceConfig = {
         HeaderComponent,
         HomeComponent,
         LoginComponent,
-        SignupComponent
+        SignupComponent,
+        ChooseGameComponent,
+        SpyPanelComponent,
+        ResistancePanelComponent
     ],
     imports: [
         BrowserModule,
