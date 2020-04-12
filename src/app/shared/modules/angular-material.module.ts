@@ -8,6 +8,8 @@ import { MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule } from '@angular/mater
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatListModule } from '@angular/material/list';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { MatDialogModule } from '@angular/material/dialog';
         MatSnackBarModule,
         MatGridListModule,
         MatListModule,
-        MatDialogModule
+        MatDialogModule,
+        MatFormFieldModule,
+        MatInputModule
     ],
     exports: [
         MatIconModule,
@@ -31,7 +35,9 @@ import { MatDialogModule } from '@angular/material/dialog';
         MatSnackBarModule,
         MatGridListModule,
         MatListModule,
-        MatDialogModule
+        MatDialogModule,
+        MatFormFieldModule,
+        MatInputModule
     ],
     providers: [
         {

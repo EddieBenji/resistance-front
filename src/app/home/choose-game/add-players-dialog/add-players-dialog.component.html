@@ -1,8 +1,35 @@
-<h2 mat-dialog-title>Add players</h2>
+<h2 mat-dialog-title
+    class="dialog-title">Add players</h2>
 <mat-dialog-content class="mat-typography">
-    CONTENT
+    <form [formGroup]="formGroup">
+        <a mat-stroked-button
+           color="primary"
+           (click)="onAddPlayer()">Add</a>
+        <ul formArrayName="players">
+            <li *ngFor="let playerCtrl of playersControls; let i=index"
+                [formGroupName]="i">
+                <mat-form-field class="w-85">
+                    <mat-label>Username</mat-label>
+                    <input matInput
+                           placeholder="Username"
+                           formControlName="username">
+                </mat-form-field>
+                <mat-icon aria-hidden="false"
+                          aria-label="Remove this player"
+                          class="click-here remove-icon"
+                          (click)="onRemoveGroup(i)">
+                    remove_circle
+                </mat-icon>
+            </li>
+        </ul>
+    </form>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
     <button mat-button mat-dialog-close>Cancel</button>
-    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+    <button mat-button
+            [disabled]="formGroup.invalid || playersFormArray.length === 0"
+            cdkFocusInitial
+            (click)="onSubmitPlayers()">
+        Create game
+    </button>
 </mat-dialog-actions>

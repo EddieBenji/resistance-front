@@ -49,6 +49,7 @@ const defaultDataServiceConfig: DefaultDataServiceConfig = {
         BrowserModule,
         HttpClientModule,
         AppRoutingModule,
+        ReactiveFormsModule,
         BrowserAnimationsModule,
         AngularMaterialModule,
         StoreModule.forRoot(reducers, {

@@ -16,7 +16,9 @@ export class ChooseGameComponent implements OnInit {
     }
 
     onCreateGame() {
-        this.dialog.open(AddPlayersDialogComponent);
+        this.dialog.open(AddPlayersDialogComponent, {
+            width: '450px'
+        });
     }
 
 }
