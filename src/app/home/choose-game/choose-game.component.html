@@ -1,19 +1,12 @@
-<mat-grid-list cols="3" rowHeight="100px">
+<mat-grid-list cols="2" rowHeight="100px">
     <mat-grid-tile>
         <button mat-raised-button>Join game</button>
     </mat-grid-tile>
     <mat-grid-tile>
-        <a routerLink="1/resistance-panel"
-           mat-raised-button
-           color="primary">
-            Create game (resistance)
-        </a>
-    </mat-grid-tile>
-    <mat-grid-tile>
-        <a routerLink="1/spy-panel"
-           mat-raised-button
-           color="warn">
-            Create game (spy)
+        <a mat-raised-button
+           color="primary"
+           (click)="onCreateGame()">
+            Create game
         </a>
     </mat-grid-tile>
 </mat-grid-list>

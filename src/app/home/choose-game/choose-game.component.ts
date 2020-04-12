@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../shared/services/user.service';
-import { User } from '../../shared/models/user.interface';
+import { MatDialog } from '@angular/material/dialog';
+import { AddPlayersDialogComponent } from './add-players-dialog/add-players-dialog.component';
 
 @Component({
     selector: 'app-choose-game',
@@ -9,21 +9,14 @@ import { User } from '../../shared/models/user.interface';
 })
 export class ChooseGameComponent implements OnInit {
 
-    constructor(private userService: UserService) {
+    constructor(private dialog: MatDialog) {
     }
 
     ngOnInit(): void {
     }
 
     onCreateGame() {
-        // const user: User = {
-        //     id: 1,
-        //     username: 'Lalo',
-        //     password: 'lalo123',
-        //     email: 'email@lalo.com',
-        //     dateLoaded: new Date()
-        // };
-        // this.userService.add(user);
+        this.dialog.open(AddPlayersDialogComponent);
     }
 
 }

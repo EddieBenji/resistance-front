@@ -26,6 +26,7 @@ import { SignupComponent } from './signup/signup.component';
 import { ChooseGameComponent } from './home/choose-game/choose-game.component';
 import { SpyPanelComponent } from './home/spy-panel/spy-panel.component';
 import { ResistancePanelComponent } from './home/resistance-panel/resistance-panel.component';
+import { AddPlayersDialogComponent } from './home/choose-game/add-players-dialog/add-players-dialog.component';
 
 const defaultDataServiceConfig: DefaultDataServiceConfig = {
     root: 'https://oscar-domain.com:8000/api/v1',
@@ -41,7 +42,8 @@ const defaultDataServiceConfig: DefaultDataServiceConfig = {
         SignupComponent,
         ChooseGameComponent,
         SpyPanelComponent,
-        ResistancePanelComponent
+        ResistancePanelComponent,
+        AddPlayersDialogComponent
     ],
     imports: [
         BrowserModule,
